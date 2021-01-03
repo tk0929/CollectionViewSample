@@ -21,11 +21,19 @@ class ViewController: UIViewController {
         
     }
     
+// MARK: - Helpers
     
     func configureCollectionView(){
         
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 100, height: 100)
+        let screenWidth: CGFloat = UIScreen.main.bounds.width
+        let cellcolumn: CGFloat = 3
+        let margin: CGFloat = 20
+        
+        let cellWidth = (screenWidth - (cellcolumn - 1) * margin) / cellcolumn
+        let cellHight = cellWidth
+        
+        flowLayout.itemSize = CGSize(width: cellWidth, height: cellHight)
         self.collectonView.collectionViewLayout = flowLayout
         
     }
