@@ -17,7 +17,16 @@ class ViewController: UIViewController {
        
 //        self.collectonView.delegate = self
         self.collectonView.dataSource = self
+        configureCollectionView()
         
+    }
+    
+    
+    func configureCollectionView(){
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width: 100, height: 100)
+        self.collectonView.collectionViewLayout = flowLayout
         
     }
 
@@ -47,3 +56,4 @@ extension ViewController: UICollectionViewDelegate{
     
     
 }
+
